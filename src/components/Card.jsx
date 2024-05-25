@@ -1,27 +1,12 @@
 import React from "react";
 
-const Card = ({ id, name, image, type, type2 }) => {
+export default function Card({ data }) {
   return (
-    <div className="cardContainer">
-      <div className="numberImageWrapper">
-        <div className="number">
-          <p>#0{id}</p>
-        </div>
-        <div className="image">
-          <img src={image} alt={name} />
-        </div>
+    <>
+      <div className="flex flex-col items-center w-full bg-slate-900 border border-white rounded-2xl my-8 p-8 ">
+        <p className="my-5">{data.name}</p>
+        <img className="" src={data.image} alt="" />
       </div>
-      <div className="name">
-        <h2>{name[0].toUpperCase() + name.substr(1)}</h2>
-      </div>
-      <div className="type">
-        <h3>
-          {type[0].toUpperCase() + type.substr(1)}
-          {type2 ? ` + ${type2[0].toUpperCase() + type2.substr(1)}` : ""}
-        </h3>
-      </div>
-    </div>
+    </>
   );
-};
-
-export default Card;
+}
